@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <title>Study Hub BY:- Rahul</title>
+</head>
+<body>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card shadow">
+        <div class="card-body">
+          <h2 class="card-title text-center">Course Registration</h2>
+          <form id="registrationForm" novalidate>
+            <div class="form-group">
+              <label for="inputFullName"><i class="fas fa-user"></i> Full Name</label>
+              <input type="text" class="form-control" id="inputFullName" placeholder="Enter your full name" required>
+              <div class="invalid-feedback">Please provide your full name.</div>
+            </div>
+            <div class="form-group">
+              <label for="inputEmail"><i class="fas fa-envelope"></i> Email</label>
+              <input type="email" class="form-control" id="inputEmail" placeholder="Enter your email" required>
+              <div class="invalid-feedback">Please provide a valid email.</div>
+            </div>
+            <div class="form-group">
+              <label for="inputPhone"><i class="fas fa-phone"></i> Phone Number</label>
+              <input type="tel" class="form-control" id="inputPhone" placeholder="Enter your phone number" required>
+              <div class="invalid-feedback">Please provide a valid phone number.</div>
+            </div>
+            <div class="form-group">
+              <label for="inputGender"><i class="fas fa-venus-mars"></i> Gender</label><br>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="gender" id="genderMale" value="male" required>
+                <label class="form-check-label" for="genderMale">Male</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="gender" id="genderFemale" value="female" required>
+                <label class="form-check-label" for="genderFemale">Female</label>
+              </div>
+              <div class="invalid-feedback">Please select your gender.</div>
+            </div>
+            <div class="form-group">
+              <label for="inputProfilePic"><i class="fas fa-image"></i> Upload Student Picture</label>
+              <input type="file" class="form-control-file" id="inputProfilePic" required>
+              <div class="invalid-feedback">Please upload your picture.</div>
+            </div>
+            <div class="form-group">
+              <label for="inputTerms"><i class="fas fa-check-square"></i> Payment Terms</label><br>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="fullPayment" value="full" required>
+                <label class="form-check-label" for="fullPayment">Full Payment</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="halfPayment" value="half" required>
+                <label class="form-check-label" for="halfPayment">Half Payment</label>
+              </div>
+              <div class="invalid-feedback">Please select a payment option.</div>
+            </div>
+            <div class="form-group form-check">
+              <input class="form-check-input" type="checkbox" id="gridCheck" required>
+              <label class="form-check-label" for="gridCheck">I agree to the <a href="#">terms and conditions</a></label>
+              <div class="invalid-feedback">You must agree before submitting.</div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block"><i class="fas fa-check"></i> Register</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card shadow">
+        <div class="card-body">
+          <h2 class="card-title text-center">Terms and Conditions</h2>
+          <p class="text-muted">
+            By registering for this course, you agree to abide by the following terms and conditions:
+          </p>
+          <ul class="list-unstyled">
+            <li><i class="fas fa-check-circle text-success"></i> All information provided during registration must be accurate and truthful.</li>
+            <li><i class="fas fa-check-circle text-success"></i> Registrations are non-transferable and must be completed by the individual who will be taking the course.</li>
+            <li><i class="fas fa-check-circle text-success"></i> Successful payment is required to confirm registration. Registration without payment will be considered incomplete.</li>
+            <li><i class="fas fa-check-circle text-success"></i> Registrations are non-refundable once the course has commenced.</li>
+            <li><i class="fas fa-check-circle text-success"></i> Attendance is mandatory for all sessions. Missing more than 20% of the course may result in disqualification.</li>
+            <li><i class="fas fa-check-circle text-success"></i> Participants are expected to complete all assignments and exams to receive a certificate of completion.</li>
+            <li><i class="fas fa-check-circle text-success"></i> Any form of cheating or plagiarism will result in immediate expulsion from the course without a refund.</li>
+          </ul>
+          <div class="alert alert-info" role="alert">
+            <i class="fas fa-info-circle"></i> Please note that your registration will be confirmed upon successful payment.
+          </div>
+          <div class="alert alert-warning" role="alert">
+            <i class="fas fa-exclamation-triangle"></i> Ensure all information is accurate to avoid any delays in registration.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Font Awesome JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+<script>
+  (function() {
+    'use strict';
+    window.addEventListener('load', function() {
+      var form = document.getElementById('registrationForm');
+
+      form.addEventListener('submit', function(event) {
+        // Name validation
+        var inputFullName = document.getElementById('inputFullName');
+        inputFullName.value = inputFullName.value.charAt(0).toUpperCase() + inputFullName.value.slice(1);
+
+        // Email validation
+        var inputEmail = document.getElementById('inputEmail');
+        var emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+        if (!inputEmail.value.match(emailPattern)) {
+          inputEmail.setCustomValidity('Invalid email format');
+        } else {
+          inputEmail.setCustomValidity('');
+        }
+
+        // Payment option validation
+        var fullPayment = document.getElementById('fullPayment');
+        var halfPayment = document.getElementById('halfPayment');
+        if (!fullPayment.checked && !halfPayment.checked) {
+          fullPayment.setCustomValidity('Please select a payment option.');
+          halfPayment.setCustomValidity('Please select a payment option.');
+        } else {
+          fullPayment.setCustomValidity('');
+          halfPayment.setCustomValidity('');
+        }
+
+        // Form validation
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    }, false);
+  })();
+</script>
+</body>
+</html>

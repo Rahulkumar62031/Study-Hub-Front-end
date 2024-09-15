@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vlog Page</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #343a40;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 50px;
+      background: linear-gradient(45deg, #007bff, #6c757d);
+      color: white;
+      padding: 40px 20px;
+      border-radius: 10px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      z-index: 1;
+    }
+
+    .header h1 {
+      font-size: 3rem;
+      margin-top: 20px;
+      z-index: 2;
+      position: relative;
+    }
+
+    .header p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+      z-index: 2;
+      position: relative;
+    }
+
+    .content {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .content h2 {
+      margin-bottom: 30px;
+    }
+
+    .topic {
+      margin-bottom: 30px;
+    }
+
+    .topic h3 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .topic p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink {
+      from { border-right-color: rgba(255, 255, 255, 0.75); }
+      to { border-right-color: transparent; }
+    }
+
+    #header-title {
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 3px solid rgba(255, 255, 255, 0.75);
+      animation: typing 5s steps(40, end), blink .75s step-end infinite;
+    }
+  </style>
+</head>
+<body>
+<div class="container mt-5">
+  <div class="header">
+    <h1 class="text-center" id="header-title"></h1>
+    <p class="lead text-center">Explore my latest content on programming and technology.</p>
+  </div>
+  <div class="content mt-5">
+    <h2>Topics</h2>
+    <div class="topic">
+      
+    </div>
+    <div class="topic">
+      <h3>C++ Language</h3>
+      <p>C++ is a powerful, high-performance programming language that builds on the foundation of C. Developed by Bjarne Stroustrup in the early 1980s, C++ introduces object-oriented programming features that enable the creation of complex software systems. In this section, we will explore the core concepts of C++, such as classes, objects, inheritance, polymorphism, and templates. We'll also look at how C++ manages memory and resources through constructors, destructors, and RAII (Resource Acquisition Is Initialization).</p>
+    </div>
+    <!-- Add more topics here -->
+  </div>
+</div>
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Font Awesome JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', (event) => {
+    const headerTitle = document.getElementById('header-title');
+    const text = 'Welcome to C++';
+
+    let index = 0;
+
+    function typeText() {
+      if (index < text.length) {
+        headerTitle.textContent += text.charAt(index);
+        index++;
+        setTimeout(typeText, 150); // Adjust the typing speed here
+      }
+    }
+
+    typeText();
+  });
+</script>
+</body>
+</html>
